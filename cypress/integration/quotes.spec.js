@@ -14,8 +14,5 @@ describe("Quotes app", () => {
     expect(2 + 2).not.to.equal(5);
   });
 
-  it("playing around selecting elements from the DOM", () => {
-    cy.get('input[name="text"]').should("exist");
-    cy.get('input[name="foobar"]').should("not.exist");
-  });
+  it("the proper elements are showing on the screen", () => {});
 });
