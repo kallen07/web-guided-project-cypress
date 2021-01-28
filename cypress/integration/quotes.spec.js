@@ -74,4 +74,10 @@ describe("Quotes app", () => {
     textInput().should("have.value", "");
     authorInput().should("have.value", "");
   });
+
+  it("can submit a new quote", () => {
+    // setup: that the quote ("have fun (Rhiannon)") is not in the DOM
+    // act: create quote: "have fun (Rhiannon)"
+    // assert: that the have fun text is now in the DOM
+  });
 });
