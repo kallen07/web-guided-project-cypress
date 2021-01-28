@@ -45,4 +45,37 @@ describe("Quotes app", () => {
       .type("Rhiannon")
       .should("have.value", "Rhiannon");
   });
+
+  it("submit button disabled until both inputs filled out", () => {
+    // set up, sanity check / make sure initial state is legit
+    // act (like typing or clicking)
+    // assert that the action has the effect we expected
+
+    submitButton().should("be.disabled");
+    textInput().type("The network itself requires minimal structure.");
+    textInput().clear();
+    submitButton().should("be.disabled");
+    authorInput().type("Satoshi Nakamoto");
+    submitButton().should("be.disabled");
+    textInput().type("The network itself requires minimal structure.");
+    submitButton().should("not.be.disabled");
+
+    //initial state: button disabled
+    //type string in quote field
+    //button still disabled
+    //type string in author field
+    //button should be enabled
+    //check if button submits
+    //removed text from quote field
+    //check if button is disabled
+
+    // button is disabled is true
+    // type in text field
+    // button is disabled is true
+    // empty text field
+    // type in author field
+    // button disables is true
+    // type in text field
+    // button is disabled is false
+  });
 });
