@@ -65,4 +65,13 @@ describe("Quotes app", () => {
     textInput().type("The network itself requires minimal structure.");
     submitBtn().should("not.be.disabled");
   });
+
+  it("can cancel a new quote", () => {
+    // should('have.value', '') -- empty input
+    textInput().type("Some quote");
+    authorInput().type("Stephen King");
+    cancelBtn().click();
+    textInput().should("have.value", "");
+    authorInput().should("have.value", "");
+  });
 });
