@@ -7,6 +7,7 @@ describe("Quotes app", () => {
 
   const authorInput = () => cy.get('input[name="author"]');
   const textInput = () => cy.get('input[name="text"]');
+  const submitBtn = () => cy.get("#submitBtn");
 
   // here go our tests
   it("sanity test to make sure tests work", () => {
@@ -19,10 +20,10 @@ describe("Quotes app", () => {
   });
 
   it("the proper elements are showing on the screen", () => {
-    cy.get('input[name="text"]').should("exist");
+    textInput().should("exist");
     cy.get('input[name="foobar"]').should("not.exist");
-    cy.get('input[name="author"]').should("exist");
-    cy.get("#submitBtn").should("exist");
+    authorInput().should("exist");
+    submitBtn().should("exist");
     cy.get('button[id="cancelBtn"]').should("exist");
     cy.contains("Submit Quote");
     cy.contains(/submit quote/i);
@@ -33,12 +34,12 @@ describe("Quotes app", () => {
     // assert they are empty
     // type in them
     // assert that the thing we typed is there
-    cy.get('input[name="text"]')
+    textInput()
       .should("have.value", "")
       .type("have fun learning React")
       .should("have.value", "have fun learning React");
 
-    cy.get('input[name="author"]')
+    authorInput()
       .should("have.value", "")
       .type("Rhiannon")
       .should("have.value", "Rhiannon");
