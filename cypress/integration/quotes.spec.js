@@ -94,7 +94,7 @@ describe("Quotes app", () => {
     // make sure we hit the edit button - check inputs
     cy.contains("Use Postman").siblings("button:nth-of-type(1)").click();
     textInput().should("have.value", "Use Postman");
-    authorInput.should("have.value", "Rhiannon");
+    authorInput().should("have.value", "Rhiannon");
     // edit the quote + submit changes
     textInput().type(" seriously");
     authorInput().type(" says");
