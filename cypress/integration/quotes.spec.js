@@ -88,6 +88,9 @@ describe("Quotes app", () => {
 
   it("can edit a quote", () => {
     // make a new quote and submit it
+    textInput().type("Use Postman");
+    authorInput().type("Rhiannon");
+    submitBtn().click();
     // make sure we hit the edit button - check inputs
     // edit the quote + submit changes
     // check that the changes made it into the DOM
