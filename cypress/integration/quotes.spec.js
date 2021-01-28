@@ -92,8 +92,17 @@ describe("Quotes app", () => {
     authorInput().type("Rhiannon");
     submitBtn().click();
     // make sure we hit the edit button - check inputs
+    cy.contains("Use Postman").siblings("button:nth-of-type(1)").click();
+    textInput().should("have.value", "Use Postman");
+    authorInput.should("have.value", "Rhiannon");
     // edit the quote + submit changes
+    textInput().type(" seriously");
+    authorInput().type(" says");
+    submitBtn().click();
     // check that the changes made it into the DOM
+    cy.contains("Use Postman seriously (Rhiannon says");
     // hit the delete button for the edited quote -> important
+    cy.contains("Use Postman seriously (Rhiannon says").next().next().click();
+    cy.contains("Use Postman seriously (Rhiannon says").should("not.exist");
   });
 });
