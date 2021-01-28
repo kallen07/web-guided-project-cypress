@@ -4,6 +4,8 @@ describe("Quotes app", () => {
     // arbitrary code you want running before your tests start
     cy.visit("http://localhost:1234");
   });
+
+  const authorInput = () => cy.get('input[name="author"]');
   // here go our tests
   it("sanity test to make sure tests work", () => {
     // expect is an assertion
