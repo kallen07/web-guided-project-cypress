@@ -85,4 +85,12 @@ describe("Quotes app", () => {
     submitBtn().click();
     cy.contains("something (isaac)").should("exist");
   });
+
+  it("can edit a quote", () => {
+    // make a new quote and submit it
+    // make sure we hit the edit button - check inputs
+    // edit the quote + submit changes
+    // check that the changes made it into the DOM
+    // hit the delete button for the edited quote -> important
+  });
 });
