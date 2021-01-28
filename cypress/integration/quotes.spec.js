@@ -51,14 +51,14 @@ describe("Quotes app", () => {
     // act (like typing or clicking)
     // assert that the action has the effect we expected
 
-    submitButton().should("be.disabled");
+    submitBtn().should("be.disabled");
     textInput().type("The network itself requires minimal structure.");
     textInput().clear();
-    submitButton().should("be.disabled");
+    submitBtn().should("be.disabled");
     authorInput().type("Satoshi Nakamoto");
-    submitButton().should("be.disabled");
+    submitBtn().should("be.disabled");
     textInput().type("The network itself requires minimal structure.");
-    submitButton().should("not.be.disabled");
+    submitBtn().should("not.be.disabled");
 
     //initial state: button disabled
     //type string in quote field
