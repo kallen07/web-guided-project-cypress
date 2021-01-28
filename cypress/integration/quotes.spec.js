@@ -6,6 +6,11 @@ describe("Quotes app", () => {
   });
   // here go our tests
   it("sanity test to make sure tests work", () => {
+    // expect is an assertion
+    // there can be many assertions per test
+    // though inside the it statement (the test) usually
+    // they are logically grouped together
     expect(1 + 2).to.equal(3);
+    expect(2 + 2).to.equal(5);
   });
 });
