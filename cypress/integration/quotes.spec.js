@@ -83,6 +83,6 @@ describe("Quotes app", () => {
     textInput().type("something");
     authorInput().type("isaac");
     submitBtn().click();
-    cy.contains("something (isaac)");
+    cy.contains("something (isaac)").should("exist");
   });
 });
