@@ -20,5 +20,6 @@ describe("Quotes app", () => {
     cy.get('input[name="author"]').should("exist");
     cy.get("#submitBtn").should("exist");
     cy.get('button[id="cancelBtn"]').should("exist");
+    cy.contains("Submit Quote");
   });
 });
