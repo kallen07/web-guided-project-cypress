@@ -6,6 +6,8 @@ describe("Quotes app", () => {
   });
 
   const authorInput = () => cy.get('input[name="author"]');
+  const textInput = () => cy.get('input[name="text"]');
+
   // here go our tests
   it("sanity test to make sure tests work", () => {
     // expect is an assertion
