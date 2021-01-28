@@ -79,5 +79,10 @@ describe("Quotes app", () => {
     // setup: that the quote ("have fun (Rhiannon)") is not in the DOM
     // act: create quote: "have fun (Rhiannon)"
     // assert: that the have fun text is now in the DOM
+    cy.contains("something (isaac)").should("not.exist");
+    textInput().type("something");
+    authorInput().type("isaac");
+    submitBtn().click();
+    cy.contains("something (isaac)");
   });
 });
