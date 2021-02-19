@@ -45,6 +45,7 @@ export default function Form(props) {
         value={values.text}
         onChange={onChange}
         placeholder='Enter text'
+        data-cy='quoteInput'
       />
       <input
         name='author'
